@@ -1,7 +1,7 @@
 menu = """
 ===========================================
 
-Olá, seja bem-vindo(a), 
+Olá, seja bem-vindo(a),
 selecione a operação que deseja realizar:
 
 [1] Depositar
@@ -20,7 +20,7 @@ LIMITE_SAQUES = 3
 while True:
 
   opcao = input(menu)
-  
+
   if opcao == "1":
     print("========== Deposito ==========")
 
@@ -29,7 +29,7 @@ while True:
       saldo += valor
       extrato += f"Deposito: R$ {valor:.2f}\n"
     else:
-      print("Valor inválido, informe um novo valor válido." )
+      print("Valor inválido, informe um novo valor válido.")
     print(f"Saldo = R$ {saldo:.2f}")
 
   elif opcao == "2":
@@ -47,6 +47,8 @@ while True:
   O valor informado passa do limite por operação.
   Informe um valor válido.
   ''')
+    elif saque < 0:
+      print("\nFalha na operação.\nInforme um valor válido.\n")
     elif saque > saldo:
       print("\nSaldo insuficiente para saque.")
     elif excedeu_saques:
